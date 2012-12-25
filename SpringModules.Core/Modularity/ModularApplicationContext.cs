@@ -8,6 +8,7 @@ namespace SpringModules.Core.Modularity
 	public class ModularApplicationContext: IModularApplicationContext
 	{
 		private readonly List<IModule> modules = new List<IModule>();
+		private bool isInitialized;
 
 		public void AddModule(IModule module)
 		{
@@ -16,17 +17,29 @@ namespace SpringModules.Core.Modularity
 
 		public void Initialize()
 		{
-			if (Container != null)
-			{
-				throw new InvalidOperationException("ModularApplicationContext is already initialized - it looks like you tried to call Initialize() twice.");
-			}
+			var applicationContext = new GenericApplicationContext();
+			Initialize(applicationContext);
 
-			var container = new GenericApplicationContext();
-			var moduleInstaller = new ModuleInstaller(container);
-			modules.ForEach(m => m.Install(moduleInstaller));
-			
-			container.Refresh();
-			Container = container;
+			//kdyz vytvarime svuj vlastni kontext, tak je potreba refreshnout, aby se nacetly komponenty
+			applicationContext.Refresh();
+		}
+
+		private readonly object initializeLock = new object();
+		public void Initialize(AbstractApplicationContext existingContext)
+		{
+			lock (initializeLock)
+			{
+				if (isInitialized)
+				{
+					throw new InvalidOperationException("ModularApplicationContext is already initialized - it looks like you tried to call Initialize() twice.");
+				}
+
+				var moduleInstaller = new ModuleInstaller(existingContext);
+				modules.ForEach(m => m.Install(moduleInstaller));
+
+				Container = existingContext;
+				isInitialized = true;
+			}
 		}
 
 		public IApplicationContext Container { get; private set; }

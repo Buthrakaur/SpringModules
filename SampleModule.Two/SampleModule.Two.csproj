@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3540C4C5-F667-4028-9454-D0687E69AAB4}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{251C238A-A23D-4B00-9AB0-98FFE2436939}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SampleCmdApp</RootNamespace>
-    <AssemblyName>SampleCmdApp</AssemblyName>
+    <RootNamespace>SampleModule.Two</RootNamespace>
+    <AssemblyName>SampleModule.Two</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -47,18 +45,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="FixedSystemTime.cs" />
+    <Compile Include="Module.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\SampleModule.Two\SampleModule.Two.csproj">
-      <Project>{251c238a-a23d-4b00-9ab0-98ffe2436939}</Project>
-      <Name>SampleModule.Two</Name>
-    </ProjectReference>
     <ProjectReference Include="..\SampleModule\SampleModule.csproj">
       <Project>{9a9cc010-9357-41ac-8802-52bc5fa8f9ef}</Project>
       <Name>SampleModule</Name>
@@ -67,6 +58,9 @@
       <Project>{066adba3-19c7-498a-9310-5f3fa0abb9d3}</Project>
       <Name>SpringModules.Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

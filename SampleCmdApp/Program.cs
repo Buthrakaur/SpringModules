@@ -14,7 +14,10 @@ namespace SampleCmdApp
 		static void Main(string[] args)
 		{
 			var ctx = new ModularApplicationContext();
-			ctx.AddModule(new Module());
+			foreach (var module in new AppDirectoryModuleLocator().GetModules())
+			{
+				ctx.AddModule(module);
+			}
 			ctx.Initialize();
 
 			var objects = ctx.Container.GetObjectsOfType(typeof (ISystemTime));

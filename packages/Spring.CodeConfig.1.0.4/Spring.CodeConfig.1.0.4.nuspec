@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Spring.CodeConfig</id>
+    <version>1.0.4</version>
+    <title>Spring.CodeConfig</title>
+    <authors>SpringSource</authors>
+    <owners>SpringSource</owners>
+    <licenseUrl>http://www.springframework.net/license.html</licenseUrl>
+    <projectUrl>http://www.springframework.net/</projectUrl>
+    <iconUrl>http://springframework.net/images/SpringSource_Leaves32x32.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Provides the ability to configure a Spring container using standard .NET code instead of or in addition to XML</description>
+    <summary>Provides the ability to configure a Spring container using standard .NET code instead of or in addition to XML</summary>
+    <dependencies>
+      <dependency id="Spring.Core" version="1.3.2" />
+    </dependencies>
+    <references>
+      <reference file="Spring.Core.Configuration.dll" />
+    </references>
+  </metadata>
+</package>

@@ -60,9 +60,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Modularity\IModuleInstaller.cs" />
     <Compile Include="Modularity\ModularApplicationContext.cs" />
     <Compile Include="Modularity\IModularApplicationContext.cs" />
     <Compile Include="Modularity\IModule.cs" />
+    <Compile Include="Modularity\ModuleInstaller.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

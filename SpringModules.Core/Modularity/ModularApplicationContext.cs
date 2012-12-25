@@ -1,23 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using Spring.Context;
+using Spring.Context.Support;
 
 namespace SpringModules.Core.Modularity
 {
 	public class ModularApplicationContext: IModularApplicationContext
 	{
+		private readonly List<IModule> modules = new List<IModule>();
+
 		public void AddModule(IModule module)
 		{
-			throw new NotImplementedException();
+			modules.Add(module);
 		}
 
 		public void Initialize()
 		{
-			throw new NotImplementedException();
-			//all modules .Install()
+			var container = new GenericApplicationContext();
+			var moduleInstaller = new ModuleInstaller(container);
+			modules.ForEach(m => m.Install(moduleInstaller));
+			
+			container.Start();
+			Container = container;
 		}
+
+		public IApplicationContext Container { get; private set; }
 	}
 }

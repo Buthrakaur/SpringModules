@@ -8,6 +8,6 @@ namespace SpringModules.Core.Modularity
 {
 	public interface IModule
 	{
-		void Install();
+		void Install(IModuleInstaller installer);
 	}
 }

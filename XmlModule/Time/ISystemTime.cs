@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace XmlModule.Time
+namespace SampleModule.Time
 {
 	public interface ISystemTime
 	{

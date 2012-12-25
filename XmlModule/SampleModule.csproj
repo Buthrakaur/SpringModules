@@ -7,8 +7,8 @@
     <ProjectGuid>{9A9CC010-9357-41AC-8802-52BC5FA8F9EF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>XmlModule</RootNamespace>
-    <AssemblyName>XmlModule</AssemblyName>
+    <RootNamespace>SampleModule</RootNamespace>
+    <AssemblyName>SampleModule</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -50,7 +50,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Time\objects.xml" />
+    <EmbeddedResource Include="Time\objects.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

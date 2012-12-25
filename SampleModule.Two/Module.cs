@@ -12,6 +12,7 @@ namespace SampleModule.Two
 		public void Install(IModuleInstaller installer)
 		{
 			installer.RegisterSingleton<FixedSystemTime>(new Dictionary<string, object> { { "fixedTime", new DateTime(2001, 2, 3, 4, 5, 6) } });
+			installer.RegisterXmlResource(this.ThisAssemblyResource("SampleModule.Two", "objects.xml"));
 		}
 	}
 }

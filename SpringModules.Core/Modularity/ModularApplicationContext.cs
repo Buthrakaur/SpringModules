@@ -25,7 +25,7 @@ namespace SpringModules.Core.Modularity
 			var moduleInstaller = new ModuleInstaller(container);
 			modules.ForEach(m => m.Install(moduleInstaller));
 			
-			container.Start();
+			container.Refresh();
 			Container = container;
 		}
 

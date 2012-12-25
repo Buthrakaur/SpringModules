@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Module.cs" />
+    <Compile Include="Time\RandomSystemTime.cs" />
     <Compile Include="Time\RealSystemTime.cs" />
     <Compile Include="Time\ISystemTime.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

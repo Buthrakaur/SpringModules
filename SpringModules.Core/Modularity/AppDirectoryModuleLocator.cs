@@ -7,6 +7,9 @@ using SpringModules.Core.Logging;
 
 namespace SpringModules.Core.Modularity
 {
+	/// <summary>
+	/// Nacte vsechny moduly, ktere najde v adresari, ze ktere bezi aplikace
+	/// </summary>
 	public class AppDirectoryModuleLocator: IModuleLocator
 	{
 		public IEnumerable<IModule> GetModules()

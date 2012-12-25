@@ -60,9 +60,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Logging\LoggingExtensions.cs" />
+    <Compile Include="Modularity\AppDirectoryModuleLocator.cs" />
     <Compile Include="Modularity\IModuleExtensions.cs" />
     <Compile Include="Modularity\IModuleInstaller.cs" />
     <Compile Include="Modularity\IModuleInstallerExtensions.cs" />
+    <Compile Include="Modularity\IModuleLocator.cs" />
     <Compile Include="Modularity\ModularApplicationContext.cs" />
     <Compile Include="Modularity\IModularApplicationContext.cs" />
     <Compile Include="Modularity\IModule.cs" />

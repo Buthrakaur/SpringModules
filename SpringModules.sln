@@ -14,6 +14,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleCmdApp", "SampleCmdAp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleModule.Two", "SampleModule.Two\SampleModule.Two.csproj", "{251C238A-A23D-4B00-9AB0-98FFE2436939}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleWebFormsApp", "SampleWebFormsApp\SampleWebFormsApp.csproj", "{0DDF4F5F-6E8B-4470-9541-9106389725EE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,6 +38,10 @@ Global
 		{251C238A-A23D-4B00-9AB0-98FFE2436939}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{251C238A-A23D-4B00-9AB0-98FFE2436939}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{251C238A-A23D-4B00-9AB0-98FFE2436939}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DDF4F5F-6E8B-4470-9541-9106389725EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DDF4F5F-6E8B-4470-9541-9106389725EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DDF4F5F-6E8B-4470-9541-9106389725EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DDF4F5F-6E8B-4470-9541-9106389725EE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

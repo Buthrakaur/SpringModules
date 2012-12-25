@@ -15,11 +15,7 @@ namespace SampleModule
 		public void Install(IModuleInstaller installer)
 		{
 			installer.RegisterXmlResource(this.ThisAssemblyResource("SampleModule.Time", "objects.xml"));
-			installer.RegisterComponent("x", new GenericObjectDefinition
-				{
-					IsSingleton = true,
-					ObjectType = typeof(RandomSystemTime)
-				});
+			installer.RegisterSingleton<RandomSystemTime>();
 		}
 	}
 }

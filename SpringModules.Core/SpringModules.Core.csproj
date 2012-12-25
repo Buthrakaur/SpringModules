@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="Modularity\IModuleExtensions.cs" />
     <Compile Include="Modularity\IModuleInstaller.cs" />
+    <Compile Include="Modularity\IModuleInstallerExtensions.cs" />
     <Compile Include="Modularity\ModularApplicationContext.cs" />
     <Compile Include="Modularity\IModularApplicationContext.cs" />
     <Compile Include="Modularity\IModule.cs" />

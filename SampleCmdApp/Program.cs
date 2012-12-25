@@ -26,7 +26,6 @@ namespace SampleCmdApp
 			foreach (var time in objects.Values.Cast<ISystemTime>())
 			{
 				Console.Out.WriteLine(time.GetType().FullName + " time is: " + time.GetCurrentTime());
-			
 			}
 
 			Console.Out.WriteLine("press return to continue");

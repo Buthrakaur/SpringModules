@@ -12,7 +12,7 @@ namespace SampleModule
 	{
 		public void Install(IModuleInstaller installer)
 		{
-			installer.RegisterXmlResource(new AssemblyResource("SampleModule/SampleModule.Time/objects.xml"));
+			installer.RegisterXmlResource(this.ThisAssemblyResource("SampleModule.Time", "objects.xml"));
 		}
 	}
 }

@@ -1,5 +1,1 @@
-registrace placeholders
-
 integrace s NHibernate
-
-integrace s WebForms

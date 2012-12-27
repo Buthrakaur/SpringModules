@@ -15,6 +15,15 @@ namespace SpringModules.Core.Web
 			base.Init(app);
 
 			var applicationContext = WebApplicationContext.GetRootContext() as AbstractApplicationContext;
+			if (applicationContext == null)
+			{
+				throw new InvalidOperationException("WebSupportModule can work only with instance of AbstractApplicationContext.");
+			}
+
+			if (ModularApplicationContextAlreadyInitialized(applicationContext))
+			{
+				return;
+			}
 
 			var ctx = new ModularApplicationContext();
 			foreach (var module in new AppDirectoryModuleLocator().GetModules())
@@ -22,6 +31,11 @@ namespace SpringModules.Core.Web
 				ctx.AddModule(module);
 			}
 			ctx.Initialize(applicationContext);
+		}
+
+		private static bool ModularApplicationContextAlreadyInitialized(AbstractApplicationContext applicationContext)
+		{
+			return applicationContext.GetObjectNamesForType(typeof (ModularApplicationContext)).Any();
 		}
 	}
 }

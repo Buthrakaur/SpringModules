@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Spring.Context;
 using Spring.Context.Support;
+using Spring.Objects.Factory.Support;
 
 namespace SpringModules.Core.Modularity
 {
@@ -33,6 +34,8 @@ namespace SpringModules.Core.Modularity
 				{
 					throw new InvalidOperationException("ModularApplicationContext is already initialized - it looks like you tried to call Initialize() twice.");
 				}
+
+				existingContext.ObjectFactory.RegisterSingleton(GetType().FullName, this);
 
 				var moduleInstaller = new ModuleInstaller(existingContext);
 				modules.ForEach(m => m.Install(moduleInstaller));
